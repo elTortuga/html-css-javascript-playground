@@ -22,28 +22,21 @@
         }
 
         .moving-text-transition {
-            /* position: absolute; */
             opacity: .3;
-            /* top: 200px; */
             transform: translate(-10%, 200px);
-            /* transform: translateX(-10%); */
             transition: transform  7s;
             transition-timing-function: linear;
         }    
 
         .moving-text-transition.loaded {
             transform: translate(110%, 200px);
-            /* transform: translateX(110%); */
         }
     </style>
     <script>
         function addClass() {
             var element = document.getElementById("moving-text-transition");
             element.classList.add("loaded");
-            // document.getElementsByClassName("moving-text-transition").addClass("loaded");
-
         }
-    
     </script>
 </head>
 <body onload="addClass()">
