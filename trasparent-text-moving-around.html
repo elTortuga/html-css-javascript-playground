@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .moving-text-animation {
+            position: absolute;
+            opacity: .5;
+            top: 90px;
+            animation-name: move-text;
+            animation-fill-mode: forwards;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+        }
+
+        @keyframes move-text {
+            from {left: -20%;}
+            to {left: 120%;}
+        }
+
+        .moving-text-transition {
+            /* position: absolute; */
+            opacity: .3;
+            /* top: 200px; */
+            transform: translate(-10%, 200px);
+            /* transform: translateX(-10%); */
+            transition: transform  7s;
+            transition-timing-function: linear;
+        }    
+
+        .moving-text-transition.loaded {
+            transform: translate(110%, 200px);
+            /* transform: translateX(110%); */
+        }
+    </style>
+    <script>
+        function addClass() {
+            var element = document.getElementById("moving-text-transition");
+            element.classList.add("loaded");
+            // document.getElementsByClassName("moving-text-transition").addClass("loaded");
+
+        }
+    
+    </script>
+</head>
+<body onload="addClass()">
+    <div class="moving-text-animation">Hello</div>
+    <div id="moving-text-transition" class="moving-text-transition">Hello</div>
+    
+
+    <script>
+        // addClass();
+    </script>
+</body>
+</html>

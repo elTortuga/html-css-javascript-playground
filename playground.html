@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Playground</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        var height;
+        var width;
+        function getDimensionsOfWindow() {
+            height = window.innerHeight;
+            width = window.innerWidth;            
+        }
+        function setDimensionsText() {
+            document.getElementById("height").innerHTML = height;
+            document.getElementById("width").innerHTML = width;
+            makeRedBox();
+        }
+        function updateDimensionTextOnResizeAndRedBox() {
+            getDimensionsOfWindow();
+            document.getElementById("dynamicHeight").innerHTML = height;
+            document.getElementById("dynamicWidth").innerHTML = width;
+            makeRedBox();
+        }
+        function makeRedBox() {
+            var box = document.getElementById("redBox");           
+            box.style.height = (height/2).toString() + "px";
+            box.style.width = (width/2).toString() + "px";
+        }
+        function moveBlueBox() {
+            var x = document.getElementById("box-wrapper");
+            if (x.classList.contains("loading")) {
+                x.classList.remove('loading');                
+                x.style.transitionDuration = "500ms";
+            } else {
+                x.classList.add("loading");
+                x.style.transitionDuration = "0ms";
+                setTimeout(function () {moveBlueBox()} ,1);
+            }
+        }
+    </script>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+        #blueBox {
+            content: "";
+            display: block;
+            margin: auto;
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+        }
+        #box-wrapper {
+            transition-duration: 1500ms;
+        }
+        .loading {
+            transform: translate(100%);
+        }
+        #greenCircle {
+            border-radius: 50%;
+            height: 100px;
+            width: 100px;
+            background-color: green;
+            margin: 50px auto;
+        }
+        
+        @media screen and ()
+
+
+    </style>
+</head>
+<body onresize="updateDimensionTextOnResizeAndRedBox()">
+    <header class="Master header">
+        <h1>Hello, and welcome to this very simple exercise</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>something else</li>
+            <li>blank</li>
+        </ul>
+    </nav>
+
+    <h2>Can you display properties about the window such as it's heigh and width when the display loads?</h2>
+    <p>Heigh: <span id="height">Not found yet</span></p>
+    <p>Width: <span id="width">Not found yet</span></p>
+    <h2>Can you display the dimensions of window as it changes?</h2>
+    <p>dynamic Heigh: <span id="dynamicHeight">Not found yet</span></p>
+    <p>dynaimc Width: <span id="dynamicWidth">Not found yet</span></p>
+    <h2>Can you make a red box half the size of this window and center it below this text?</h2>
+    <div id="redBox" style="background-color: red; margin: 50px auto"></div>
+    <h2>Can you make a blue box 100x100 pixels slide from the right of off screen to center align when the following button is clicked? <button onclick="moveBlueBox()">Click me</button></h2>
+    <div id="box-wrapper" class="loading">
+        <div id="blueBox"></div>
+    </div>
+    <h2>Can you make a horizontally centered green circle?</h2>
+    <div id="greenCircle"></div>
+    <script>
+        getDimensionsOfWindow();
+        setDimensionsText();
+    </script>
+</body>
+</html>
