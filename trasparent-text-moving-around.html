@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,40 +13,50 @@
             top: 90px;
             animation-name: move-text;
             animation-fill-mode: forwards;
-            animation-duration: 10s;
+            animation-duration: 7s;
             animation-timing-function: linear;
         }
 
         @keyframes move-text {
-            from {left: -20%;}
-            to {left: 120%;}
+            from {
+                left: -10%;
+            }
+            to {
+                left: 110%;
+            }
         }
 
         .moving-text-transition {
             opacity: .3;
             transform: translate(-10%, 200px);
-            transition: transform  7s;
+            transition: transform 7s;
             transition-timing-function: linear;
-        }    
+        }
 
         .moving-text-transition.loaded {
             transform: translate(110%, 200px);
         }
     </style>
+</head>
+<!-- <body onload="addClass()"> -->
+
+<body>
+
+    <div class="moving-text-animation">Hello</div>
+    <div id="moving-text-transition" class="moving-text-transition">Hello</div>
+
+
+    <script>
+        // addClass();
+    </script>
     <script>
         function addClass() {
             var element = document.getElementById("moving-text-transition");
             element.classList.add("loaded");
         }
-    </script>
-</head>
-<body onload="addClass()">
-    <div class="moving-text-animation">Hello</div>
-    <div id="moving-text-transition" class="moving-text-transition">Hello</div>
-    
 
-    <script>
-        // addClass();
+        setTimeout(addClass, 1);
     </script>
 </body>
+
 </html>
