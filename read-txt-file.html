@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Read File </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  </style>
+</head>
+
+<body>
+  <h2>Fetch Method</h2>
+  <p id="fetch-method"></p>
+
+  <script>
+    let url = "./src/docs/lorem-sm.txt";
+
+// Fetch method
+    fetch(url)
+      .then(response => response.text())
+      // .then(text => console.log(text));
+      .then(text => document.getElementById('fetch-method').innerText = text );
+
+
+    // let req = new XMLHttpRequest();
+    // req.open('GET', url, true);
+    // req.addEventListener('load', () => {
+    //   if (req.status < 400)
+    //     console.log(req.responseText);
+    //   else
+    //     console.log(req);
+
+
+    // })
+
+
+  </script>
+</body>
+
+</html>
