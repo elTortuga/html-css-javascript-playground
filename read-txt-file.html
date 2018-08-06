@@ -20,7 +20,6 @@
 // Fetch method
     fetch(url)
       .then(response => response.text())
-      // .then(text => console.log(text));
       .then(text => document.getElementById('fetch-method').innerText = text );
 
 
