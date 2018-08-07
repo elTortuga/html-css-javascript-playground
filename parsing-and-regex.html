@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  </style>
+</head>
+
+<body>
+  <h1>Parsing and Regex</h1>
+
+  <h3>List items made of sentences parsed from Lorem file</h3>
+  <ul id="add-here"></ul>
+
+</body>
+<script>
+  let loremSentences = [];
+
+  fetch('./src/docs/lorem-x-sm.txt')
+    .then(res => res.text())
+    .then(text => {
+      loremSentences = parseParagraphsIntoSentences(text);
+      appendSetencesToList(loremSentences, 'add-here')
+    });
+
+  function parseParagraphsIntoSentences(text) {
+    return text.match(/[^\.!\?]+[\.!\?]+/g);
+  }
+
+  function appendSetencesToList(sentences, listName) {
+    let list = document.getElementById(listName);
+    sentences.forEach(sentence => {
+      let listItem = document.createElement("li");
+      listItem.innerText = sentence;
+      list.appendChild(listItem);
+    });
+  }
+
+</script>
+
+</html>
