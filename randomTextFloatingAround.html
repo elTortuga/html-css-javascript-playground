@@ -8,9 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
   </style>
-  <script>
-
-  </script>
 </head>
 
 <body>
@@ -29,6 +26,31 @@
     be removed. Text will never be upside down but it's angle will match the 
     angle of the direction it is moving in. The text will be made from a 
     collecition of quotes from a local file.*/
+
+    // Get an array of Quotes from file
+    const quotesURL = "./src/docs/quotes.txt";
+    let quotes;
+
+    fetch(quotesURL)
+      .then(res => res.text())
+      .then(text => {
+        // return text.split('\n');
+        quoteMovesAcrossScreen(text.split('\n'));
+      });
+
+    // Pick a quote from random and move it across the screen
+
+    function quoteMovesAcrossScreen(quotes) {      
+      let randomQuoteIndex = Math.floor(Math.random() * (quotes.length));
+      let quote = quotes[randomQuoteIndex];
+
+      let quoteElement = document.createElement("p");
+      quoteElement.innerText = quote;
+      let opacity = .3;
+      quoteElement.setAttribute('style', `opacity: ${opacity};`);
+      document.body.appendChild(quoteElement);
+    }
+
   </script>
 </body>
 
