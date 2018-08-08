@@ -118,23 +118,16 @@
       let quoteElement = document.createElement("p");
       quoteElement.innerText = quote;
 
-
       document.body.appendChild(quoteElement);
       quoteElement.setAttribute('style',
         `position: fixed;
         font-size: 30px;
         white-space: nowrap;`
-        
+
       );
 
-      console.log(quoteElement.offsetWidth);
-
-
       let sumOfWidths = window.innerWidth + quoteElement.offsetWidth;
-
       let transitionTime = sumOfWidths / 40;
-
-
 
       let opacity = .15;
       let top = "100px";
@@ -144,10 +137,7 @@
 
       document.getElementById("sum-of-widths").innerHTML += sumOfWidths;
       document.getElementById("transition-time").innerHTML += transitionTime;
-      document.getElementById("pixels-per-second").innerHTML += sumOfWidths/ transitionTime;
-
-
-      console.log(quoteElement.getBoundingClientRect());
+      document.getElementById("pixels-per-second").innerHTML += sumOfWidths / transitionTime;
 
       quoteElement.setAttribute('style',
         `opacity: ${opacity};
@@ -158,7 +148,7 @@
         transition-timing-function: linear;
         white-space: nowrap;`
       );
-      console.log(quoteElement.getBoundingClientRect());
+
       setTimeout(() => {
         quoteElement.style.top = `${top}`;
         quoteElement.style.left = `${left}`;
