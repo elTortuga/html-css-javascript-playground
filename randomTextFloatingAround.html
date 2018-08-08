@@ -10,11 +10,82 @@
   </style>
 </head>
 
-<body>
+<body onload="doOnLoad()">
   <h1>Text</h1>
+  <p id="window-width">Width of window:&nbsp; </p>
+  <p id="width">Width of text:&nbsp; </p>
+  <p id="sum-of-widths">Sum of widths:&nbsp; </p>
+  <p id="transition-time">transition time:&nbsp; </p>
+  <p id="pixels-per-second">pixels per second:&nbsp; </p>
+
+  <p>// Example of text moving randomly around the screen. Possible use for a minor effect for a blog or text heavy page on
+    a site. // Technologies used: css - transition, translate, opacity; html - dom manipulation; javascript - file access,
+    object creation, random, math // /* Randomly chosen text will move across the screen with a low opacity level. Starting
+    positions will be off screen at any of the sides and move towards the opposite side (right to left, above to belog...)
+    until the text is complete off screen. Once text is no longer visible on the screen it will be removed. Text will never
+    be upside down but it's angle will match the angle of the direction it is moving in. The text will be made from a collecition
+    of quotes from a local file.*/</p>
+  <p>// Example of text moving randomly around the screen. Possible use for a minor effect for a blog or text heavy page on
+    a site. // Technologies used: css - transition, translate, opacity; html - dom manipulation; javascript - file access,
+    object creation, random, math // /* Randomly chosen text will move across the screen with a low opacity level. Starting
+    positions will be off screen at any of the sides and move towards the opposite side (right to left, above to belog...)
+    until the text is complete off screen. Once text is no longer visible on the screen it will be removed. Text will never
+    be upside down but it's angle will match the angle of the direction it is moving in. The text will be made from a collecition
+    of quotes from a local file.*/</p>
+  <p>// Example of text moving randomly around the screen. Possible use for a minor effect for a blog or text heavy page on
+    a site. // Technologies used: css - transition, translate, opacity; html - dom manipulation; javascript - file access,
+    object creation, random, math // /* Randomly chosen text will move across the screen with a low opacity level. Starting
+    positions will be off screen at any of the sides and move towards the opposite side (right to left, above to belog...)
+    until the text is complete off screen. Once text is no longer visible on the screen it will be removed. Text will never
+    be upside down but it's angle will match the angle of the direction it is moving in. The text will be made from a collecition
+    of quotes from a local file.*/</p>
+  <p>// Example of text moving randomly around the screen. Possible use for a minor effect for a blog or text heavy page on
+    a site. // Technologies used: css - transition, translate, opacity; html - dom manipulation; javascript - file access,
+    object creation, random, math // /* Randomly chosen text will move across the screen with a low opacity level. Starting
+    positions will be off screen at any of the sides and move towards the opposite side (right to left, above to belog...)
+    until the text is complete off screen. Once text is no longer visible on the screen it will be removed. Text will never
+    be upside down but it's angle will match the angle of the direction it is moving in. The text will be made from a collecition
+    of quotes from a local file.*/</p>
+  <p>// Example of text moving randomly around the screen. Possible use for a minor effect for a blog or text heavy page on
+    a site. // Technologies used: css - transition, translate, opacity; html - dom manipulation; javascript - file access,
+    object creation, random, math // /* Randomly chosen text will move across the screen with a low opacity level. Starting
+    positions will be off screen at any of the sides and move towards the opposite side (right to left, above to belog...)
+    until the text is complete off screen. Once text is no longer visible on the screen it will be removed. Text will never
+    be upside down but it's angle will match the angle of the direction it is moving in. The text will be made from a collecition
+    of quotes from a local file.*/</p>
+  <p>// Example of text moving randomly around the screen. Possible use for a minor effect for a blog or text heavy page on
+    a site. // Technologies used: css - transition, translate, opacity; html - dom manipulation; javascript - file access,
+    object creation, random, math // /* Randomly chosen text will move across the screen with a low opacity level. Starting
+    positions will be off screen at any of the sides and move towards the opposite side (right to left, above to belog...)
+    until the text is complete off screen. Once text is no longer visible on the screen it will be removed. Text will never
+    be upside down but it's angle will match the angle of the direction it is moving in. The text will be made from a collecition
+    of quotes from a local file.*/</p>
+  <p>// Example of text moving randomly around the screen. Possible use for a minor effect for a blog or text heavy page on
+    a site. // Technologies used: css - transition, translate, opacity; html - dom manipulation; javascript - file access,
+    object creation, random, math // /* Randomly chosen text will move across the screen with a low opacity level. Starting
+    positions will be off screen at any of the sides and move towards the opposite side (right to left, above to belog...)
+    until the text is complete off screen. Once text is no longer visible on the screen it will be removed. Text will never
+    be upside down but it's angle will match the angle of the direction it is moving in. The text will be made from a collecition
+    of quotes from a local file.*/</p>
+  <p>// Example of text moving randomly around the screen. Possible use for a minor effect for a blog or text heavy page on
+    a site. // Technologies used: css - transition, translate, opacity; html - dom manipulation; javascript - file access,
+    object creation, random, math // /* Randomly chosen text will move across the screen with a low opacity level. Starting
+    positions will be off screen at any of the sides and move towards the opposite side (right to left, above to belog...)
+    until the text is complete off screen. Once text is no longer visible on the screen it will be removed. Text will never
+    be upside down but it's angle will match the angle of the direction it is moving in. The text will be made from a collecition
+    of quotes from a local file.*/</p>
+  <p>// Example of text moving randomly around the screen. Possible use for a minor effect for a blog or text heavy page on
+    a site. // Technologies used: css - transition, translate, opacity; html - dom manipulation; javascript - file access,
+    object creation, random, math // /* Randomly chosen text will move across the screen with a low opacity level. Starting
+    positions will be off screen at any of the sides and move towards the opposite side (right to left, above to belog...)
+    until the text is complete off screen. Once text is no longer visible on the screen it will be removed. Text will never
+    be upside down but it's angle will match the angle of the direction it is moving in. The text will be made from a collecition
+    of quotes from a local file.*/</p>
+
 
 
   <script>
+    document.getElementById('window-width').innerHTML += window.innerWidth;
 
     // Example of text moving randomly around the screen.  Possible use for a minor effect for a blog or text heavy page on a site.
     // Technologies used: css - transition, translate, opacity; html -  dom manipulation; javascript - file access, object creation, random, math
@@ -31,24 +102,70 @@
     const quotesURL = "./src/docs/quotes.txt";
     let quotes;
 
-    fetch(quotesURL)
-      .then(res => res.text())
-      .then(text => {
-        // return text.split('\n');
-        quoteMovesAcrossScreen(text.split('\n'));
-      });
+    function doOnLoad() {
+      fetch(quotesURL)
+        .then(res => res.text())
+        .then(text => {
+          quoteMovesAcrossScreen(text.split('\n'));
+        });
+    }
 
     // Pick a quote from random and move it across the screen
-
-    function quoteMovesAcrossScreen(quotes) {      
+    function quoteMovesAcrossScreen(quotes) {
       let randomQuoteIndex = Math.floor(Math.random() * (quotes.length));
       let quote = quotes[randomQuoteIndex];
 
       let quoteElement = document.createElement("p");
       quoteElement.innerText = quote;
-      let opacity = .3;
-      quoteElement.setAttribute('style', `opacity: ${opacity};`);
+
+
       document.body.appendChild(quoteElement);
+      quoteElement.setAttribute('style',
+        `position: fixed;
+        font-size: 30px;
+        white-space: nowrap;`
+        
+      );
+
+      console.log(quoteElement.offsetWidth);
+
+
+      let sumOfWidths = window.innerWidth + quoteElement.offsetWidth;
+
+      let transitionTime = sumOfWidths / 40;
+
+
+
+      let opacity = .15;
+      let top = "100px";
+      let startingPosition = `left: -${quoteElement.offsetWidth + 10}px; top: 100px;`;
+      let left = `${window.innerWidth}px`;
+      let transition = `left ${transitionTime}s`;
+
+      document.getElementById("sum-of-widths").innerHTML += sumOfWidths;
+      document.getElementById("transition-time").innerHTML += transitionTime;
+      document.getElementById("pixels-per-second").innerHTML += sumOfWidths/ transitionTime;
+
+
+      console.log(quoteElement.getBoundingClientRect());
+
+      quoteElement.setAttribute('style',
+        `opacity: ${opacity};
+        position: fixed;
+        font-size: 30px;
+        ${startingPosition}
+        transition: ${transition};
+        transition-timing-function: linear;
+        white-space: nowrap;`
+      );
+      console.log(quoteElement.getBoundingClientRect());
+      setTimeout(() => {
+        quoteElement.style.top = `${top}`;
+        quoteElement.style.left = `${left}`;
+      }
+        , 100);
+
+      document.getElementById('width').innerText += quoteElement.offsetWidth;
     }
 
   </script>
